@@ -2,19 +2,12 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-app.use(express.static(path.join(__dirname)));
-app.use("/styles", express.static(__dirname));
-app.use("/images", express.static(__dirname + '/images'));
-app.use("/scripts", express.static(__dirname + '/scripts'));
-
-// viewed at based directory http://localhost:8080/
+// homepage view at directory http://localhost:8080/
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
-// add other routes below
-app.get('/statcard', function (req, res) {
-  res.render(path.join(__dirname + '/views/statcard/index.html'));
-});
+app.listen(process.env.PORT || 8080)
 
-app.listen(process.env.PORT || 8080);
+// Stat preview card view
+app.use("/statcard", express.static(__dirname + '/views/statcard'));
