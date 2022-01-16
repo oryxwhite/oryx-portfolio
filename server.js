@@ -3,9 +3,11 @@ var app = express();
 var path = require('path');
 
 // Landing page view at http://localhost:8080/
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/views/index.html'));
-});
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname + '/views/index.html'));
+// });
+
+app.use("/", express.static(__dirname + '/views/landingpage'));
 
 app.listen(process.env.PORT || 8080)
 
