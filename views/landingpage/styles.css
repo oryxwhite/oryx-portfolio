@@ -1,9 +1,53 @@
+body {
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+}
+
+header {
+    background-color: rgb(246, 208, 255);
+    padding: .25em 1em;
+    box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+                0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    
+}
 h1 {
-    color: pink;
+    color: rgb(49, 0, 43);
 }
 
 a {
     text-decoration: none;
-    color:rgb(243, 65, 169);
+}
+
+
+
+.links {
+    margin-top: 1em;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
     
+
+}
+
+.portimg {
+    display: block;
+    height: 200px;
+    width: auto;
+    align-items: center;
+    border-radius: 10px ;
+    border:rgb(49, 0, 43) solid 1px;
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+        
+}
+
+.portimg:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 375px) {
+    .links {
+        flex-direction: column;
+        gap: 0;
+    }
 }
