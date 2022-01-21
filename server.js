@@ -14,3 +14,4 @@ app.listen(process.env.PORT || 8080)
 // Project views
 app.use("/statcard", express.static(__dirname + '/views/statcard'));
 app.use("/ordersum", express.static(__dirname + '/views/ordersum'));
+app.use("/pricing", express.static(__dirname + '/views/pricing'));
